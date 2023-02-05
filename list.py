@@ -173,7 +173,7 @@ class Ui_Widget(object):
                 select_affirmation = random.randint(0, 4)
                 self.textBrowser_2.setPlainText(categories[select_category][select_affirmation])
 
-        self.pushButton.clicked.connect(checkButton)
+        self.pushButton.clicked.connect(checkButton) 
 
         self.retranslateUi(Widget)
         QtCore.QMetaObject.connectSlotsByName(Widget)
@@ -211,19 +211,19 @@ class Ui_Widget(object):
         self.show()
 
     def checkedHappy(self, checked):
-        # print("made it")
         if checked:
             self.affirm['happiness']= 1
             categories.append(happiness)
         else:
             self.affirm['happiness']= 0
         self.show()
+  
 
     def show(self):
         checkedlangs =', '.join([key for key in self.affirm.keys()
                                          if self.affirm[key]== 1])
-
-        self.textBrowser_2.setText("You are getting affirmatons on " + checkedlangs)
+                                         
+        self.textBrowser_2.setText("You are getting affirmatons on "+checkedlangs)
 
     def add_it(self):
         entry = self.lineEdit.text()
